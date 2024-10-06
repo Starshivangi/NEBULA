@@ -1,0 +1,252 @@
+<!-- templates/your_app/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Project - Nebula</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1b1b1b;
+            color: #f0f0f0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 20px;
+        }
+
+        .navbar-left {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+
+        .navbar-right {
+            display: flex;
+        }
+
+        .navbar-right a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #f0f0f0;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .navbar-right a:hover {
+            color: #ff6f61;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            margin-top: 40px;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* Content Section with Square Buttons */
+        .content {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Square Button Styles */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .button-box {
+            background-color: #292929;
+            color: white;
+            width: 220px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-box:hover {
+            background-color: #383838; /* Darker shade on hover */
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
+
+        .button-box img {
+            width: 220px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px; /* Make images circular */
+            margin-bottom: 10px;
+        }
+
+        .button-box p {
+            font-size: 1rem;
+            margin-top: 8px;
+            margin-bottom: 4px;
+            color: #d0d0d0;
+        }
+
+        .button-box a {
+            text-decoration: none;
+            color: #f9f5f5;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            margin: 10px;
+        }
+
+        .button-box a:hover {
+            color: #ff4433;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            background-color: #000;
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        .background-text {
+            font-size: 55px; /* Match the font size with your header */
+            font-weight: bold;
+            color: transparent;/*color: transparent; /* Make the text transparent */
+            background-image: url('https://media.istockphoto.com/id/1035676256/photo/background-of-galaxy-and-stars.jpg?s=2048x2048&w=is&k=20&c=XAFzMrxYXcR3XR3pvSbovXWxH8CD3q9fPkP-Jnf3qF8='); /* Replace with your image URL */
+            background-size: cover; /* Ensure the image covers the text area */
+            background-position: center;
+            -webkit-background-clip: text; /* Ensures the background is clipped to text in webkit browsers */
+            background-clip: text; /* Clipping background to text */
+            display: inline-block;
+        }
+    
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            NEBULA
+        </div>
+        <div class="navbar-right">
+            <a href="#">Home</a>
+            <!-- <a href="#">Star Map</a> -->
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Explore the Wonders of the Universe</h2>
+        <p>Your journey to the stars begins here</p>
+    </section>
+
+    <!-- Content Section with Buttons -->
+    <div class="container">
+        <section class="content">
+            <h1 style="font-size: 55px;">EXPLORE OUR S<span class="background-text">PACE</span></h1>
+            <div class="buttons">
+                <!-- Button 1: WATER TEMPERATURE LEVEL DASHBOARD -->
+                <div class="button-box">
+                    <img src="https://i.pinimg.com/564x/54/49/0c/54490c8e6b9f884cbcca0962404e92a1.jpg" alt="Water Temperature">
+                    <p>Track changes in water temperatures</p>
+                    <a href='https://dashboard-mkfu7jdgjihxhqxjxt9bfg.streamlit.app/'>WATER TEMPERATURE LEVEL DASHBOARD</a>
+                </div>
+
+                <!-- Button 2: OCEAN DEPLETION FACTOR -->
+                <div class="button-box">
+                    <img src="https://i.pinimg.com/564x/9a/84/b8/9a84b8376621685c289a46054ee71239.jpg" alt="Ocean Depletion">
+                    <p>Analyze factors leading to ocean depletion</p>
+                    <a href='https://main3dplots-xpavvx2v8sd3fuya2lwjry.streamlit.app/'>OCEAN DEPLETION FACTOR</a>
+                </div>
+
+                <!-- Button 3: QUIZ FOR WIZZ -->
+                <div class="button-box">
+                    <img src="https://i.pinimg.com/736x/88/46/9c/88469cd587b4a45b0274adfb33745d5e.jpg" alt="Quiz">
+                    <p>Test your knowledge on Space</p>
+                    <a href="https://spacepacequiz.netlify.app/">QUIZ FOR WIZZ</a>
+                </div>
+
+                <!-- Button 4: MORE ABOUT PACE SATELLITE -->
+                <!-- <div class="button-box">
+                    <img src="https://i.pinimg.com/736x/0f/c9/7a/0fc97ad9ef34bf1bf24998b8ec2dabeb.jpg" alt="PACE Satellite">
+                    <p>Displays the Chrolophyl Concentration in different parts of the pacific ocean</p>
+                    <a href="{% url 'chlorophyll_analysis' %}">CHLOROPHYLL ANALYSIS</a>
+                </div> -->
+                 <!-- Button 5: MORE ABOUT PACE SATELLITE -->
+                 <div class="button-box">
+                    <img src="https://i.pinimg.com/564x/a9/07/63/a907635f6387c733ac54469605635397.jpg" alt="PACE Satellite">
+                    <p>Play the game to improve you concentration</p>
+                    <a href="https://pacegame.netlify.app/">SPACE DODGER</a>
+                </div>
+
+                <!-- Button 6: MORE ABOUT PACE SATELLITE -->
+                <div class="button-box">
+                    <img src="https://i.pinimg.com/564x/dc/8e/4d/dc8e4d3aa5b57977397f4aa0420249c5.jpg" alt="PACE Satellite">
+                    <p>Learn about NASA's PACE satellite mission</p>
+                    <a href="{% url 'pace_satellite' %}">MORE ABOUT PACE SATELLITE</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Nebula Space Project. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
